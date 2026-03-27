@@ -26,7 +26,7 @@ import {
 //  CONSTANTS
 // ============================================================
 
-const MODULE_NAME = 'chain-thinking';
+const MODULE_NAME = 'Extension-ChainThinking';
 const extensionFolder = `scripts/extensions/third-party/${MODULE_NAME}`;
 
 // ============================================================
