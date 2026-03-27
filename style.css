@@ -1,0 +1,102 @@
+.chain-thinking-settings .ct-row {
+    margin: 5px 0;
+}
+
+.chain-thinking-settings .ct-divider {
+    border: none;
+    border-top: 1px solid var(--SmartThemeBorderColor, #444);
+    margin: 10px 0;
+}
+
+.chain-thinking-settings .ct-hint {
+    display: block;
+    color: var(--SmartThemeQuoteColor, #888);
+    margin: 4px 0 8px 0;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+/* Rule card */
+.ct-rule {
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 5px;
+    margin-bottom: 6px;
+    padding: 6px 8px;
+    background: var(--SmartThemeBlurTintColor, rgba(0, 0, 0, 0.1));
+}
+
+.ct-rule-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+
+.ct-rule-header .ct-rule-name {
+    flex: 1;
+    min-width: 80px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+
+.ct-rule-phases {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.ct-rule-phases .checkbox_label {
+    font-size: 0.8em;
+    padding: 1px 3px;
+}
+
+.ct-rule-phases .checkbox_label span {
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.ct-rule-body {
+    margin-top: 6px;
+}
+
+.ct-rule-body textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ct-rule-expand,
+.ct-rule-delete {
+    flex-shrink: 0;
+    padding: 2px 6px !important;
+    font-size: 0.85em;
+}
+
+.ct-no-rules {
+    color: var(--SmartThemeQuoteColor, #888);
+    font-style: italic;
+    padding: 8px 0;
+    text-align: center;
+}
+
+/* Threshold row */
+.ct-threshold-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0;
+}
+
+.ct-threshold-row label {
+    flex-shrink: 0;
+    font-size: 0.9em;
+}
+
+.ct-threshold-row .neo-range-slider {
+    flex: 1;
+}
+
+.ct-threshold-row span {
+    min-width: 28px;
+    text-align: right;
+    font-weight: bold;
+}

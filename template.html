@@ -1,0 +1,109 @@
+<div class="chain-thinking-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Chain Thinking</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+
+            <!-- Master Toggle -->
+            <div class="ct-row">
+                <label class="checkbox_label">
+                    <input type="checkbox" id="ct_enabled" />
+                    <span>Enable Chain Thinking</span>
+                </label>
+            </div>
+
+            <hr class="ct-divider" />
+
+            <!-- Step 1: Think -->
+            <div class="inline-drawer">
+                <div class="inline-drawer-toggle inline-drawer-header">
+                    <b>Step 1: Think</b>
+                    <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+                </div>
+                <div class="inline-drawer-content">
+                    <label class="checkbox_label">
+                        <input type="checkbox" id="ct_think_enabled" />
+                        <span>Enable Think Step</span>
+                    </label>
+                    <small class="ct-hint">
+                        Runs before generation. Produces reasoning that gets injected as context for the actual response.
+                    </small>
+                    <textarea id="ct_think_prompt" class="text_pole textarea_compact" rows="8"
+                        placeholder="Pre-thinking prompt template..."></textarea>
+                </div>
+            </div>
+
+            <!-- Rules -->
+            <div class="inline-drawer">
+                <div class="inline-drawer-toggle inline-drawer-header">
+                    <b>Rules</b>
+                    <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+                </div>
+                <div class="inline-drawer-content">
+                    <small class="ct-hint">
+                        Each rule can be assigned to phases: <b>T</b>hink, <b>W</b>rite, <b>J</b>udge.
+                        Think-phase rules shape the pre-analysis. Write-phase rules are injected into generation.
+                        Judge-phase rules are used to evaluate the response.
+                    </small>
+                    <div id="ct_rules_list"></div>
+                    <div class="menu_button" id="ct_add_rule">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Rule</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Judge -->
+            <div class="inline-drawer">
+                <div class="inline-drawer-toggle inline-drawer-header">
+                    <b>Step 3: Judge (Optional)</b>
+                    <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+                </div>
+                <div class="inline-drawer-content">
+                    <label class="checkbox_label">
+                        <input type="checkbox" id="ct_judge_enabled" />
+                        <span>Enable Judge Step</span>
+                    </label>
+                    <small class="ct-hint">
+                        After generation, evaluates the response against judge-phase rules.
+                        If the pass rate is below the threshold, triggers a rewrite.
+                    </small>
+                    <div class="ct-threshold-row">
+                        <label>Pass Threshold:</label>
+                        <input type="range" id="ct_judge_threshold" min="0" max="100" value="80"
+                            class="neo-range-slider" />
+                        <span id="ct_threshold_display">80</span>%
+                    </div>
+                    <textarea id="ct_judge_prompt" class="text_pole textarea_compact" rows="6"
+                        placeholder="Judge prompt template..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 4: Rewrite -->
+            <div class="inline-drawer">
+                <div class="inline-drawer-toggle inline-drawer-header">
+                    <b>Step 4: Rewrite (if needed)</b>
+                    <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+                </div>
+                <div class="inline-drawer-content">
+                    <small class="ct-hint">
+                        Only runs when the judge step detects violations below the pass threshold.
+                        Rewrites the response to fix violations while preserving style.
+                    </small>
+                    <textarea id="ct_rewrite_prompt" class="text_pole textarea_compact" rows="4"
+                        placeholder="Rewrite instruction template..."></textarea>
+                </div>
+            </div>
+
+            <hr class="ct-divider" />
+
+            <!-- Debug -->
+            <label class="checkbox_label">
+                <input type="checkbox" id="ct_show_debug" />
+                <span>Show debug notifications</span>
+            </label>
+        </div>
+    </div>
+</div>
