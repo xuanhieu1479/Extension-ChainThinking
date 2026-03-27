@@ -26,8 +26,8 @@ import {
 //  CONSTANTS
 // ============================================================
 
-const MODULE_NAME = 'Extension-ChainThinking';
-const extensionFolder = `scripts/extensions/third-party/${MODULE_NAME}`;
+const MODULE_NAME = 'chain_thinking';
+const extensionName = 'third-party/Extension-ChainThinking';
 
 // ============================================================
 //  DEFAULT SETTINGS
@@ -504,7 +504,7 @@ function bindRuleEvents() {
 // ============================================================
 
 async function initUI() {
-    const html = await renderExtensionTemplateAsync(extensionFolder, 'template');
+    const html = await renderExtensionTemplateAsync(extensionName, 'template');
     $('#extensions_settings').append(html);
 
     const settings = getSettings();
