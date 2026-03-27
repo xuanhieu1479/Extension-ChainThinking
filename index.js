@@ -504,7 +504,7 @@ function bindRuleEvents() {
 // ============================================================
 
 async function initUI() {
-    const html = await renderExtensionTemplateAsync(extensionName, 'template');
+    const html = await renderExtensionTemplateAsync(extensionName, 'dropdown');
     $('#extensions_settings').append(html);
 
     const settings = getSettings();
